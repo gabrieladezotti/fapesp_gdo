@@ -11,13 +11,16 @@ itirapina_plots <- read.table("14042021_plots_pa.txt", h = T,
 for (variable in unique(itirapina_plots$tratamento)) {
   assign(variable, itirapina_plots %>% filter (tratamento == variable),
          envir =  .GlobalEnv)
-}
+} #não entendi porque variavle entrou como tardia no environment
 
 #teste para controle:
+teste <- controle %>%
+ dplyr::filter(data == "2014_05" | data == "2016_10")
 
-output <- vector("double", length(unique(controle$parcela)))
- for (variable in unique(controle$parcela)) {
-  betapart::beta.multi(controle[ ,-c(1:5)], index.family = "sorensen")
+betamulti.controle = double()
+ for (i in seq_along(unique(teste$parcela))) 
+   {betamulti.controle[[i]] = beta.multi(teste[ ,-c(1:5)], 
+                                       index.family = "sorensen")
  }
 
   
