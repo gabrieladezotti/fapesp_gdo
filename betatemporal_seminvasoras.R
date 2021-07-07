@@ -23,103 +23,107 @@ for (variable in unique(itirapina_plots$invasora)) {
 MM <- MM[,c(-6,-19)]
 UD <- UD[,c(-6,-19)]
 
+
+MM <- MM %>%
+  filter(parcela != 23)
+
 ##Diversidade Beta INICIAL-FINAL
 #MM
 betamulti.3 <- beta.multi(MM[c(5,93),
                              -c(1:5)], index.family="sorensen")
 
-betamulti.8 <- beta.multi(MM[c(1, 106),
+betamulti.8 <- beta.multi(MM[c(1, 105),
                              -c(1:5)], index.family="sorensen")
 
-betamulti.9 <- beta.multi(MM[c(13, 102),
+betamulti.9 <- beta.multi(MM[c(13, 101),
                              -c(1:5)], index.family="sorensen")
 
-betamulti.16 <- beta.multi(MM[c(21, 110),
+betamulti.16 <- beta.multi(MM[c(21, 109),
                               -c(1:5)], index.family="sorensen")
 
 betamulti.17 <- beta.multi(MM[c(6, 94),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.18 <- beta.multi(MM[c(2, 107),
+betamulti.18 <- beta.multi(MM[c(2, 106),
                               -c(1:5)], index.family="sorensen")
 
 betamulti.22 <- beta.multi(MM[c(7, 95),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.28 <- beta.multi(MM[c(3, 108),
+betamulti.28 <- beta.multi(MM[c(3, 107),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.29 <- beta.multi(MM[c(22, 111),
+betamulti.29 <- beta.multi(MM[c(22, 110),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.30 <- beta.multi(MM[c(14, 103),
-                              -c(1:5)], index.family="sorensen") ##ver o que deu errado
-
-betamulti.31 <- beta.multi(MM[c(8, 97),
+betamulti.30 <- beta.multi(MM[c(14, 102),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.32 <- beta.multi(MM[c(23, 112),
+betamulti.31 <- beta.multi(MM[c(8, 96),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.40 <- beta.multi(MM[c(15, 104),
+betamulti.32 <- beta.multi(MM[c(23, 111),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.42 <- beta.multi(MM[c(24, 113),
+betamulti.40 <- beta.multi(MM[c(15, 103),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.43 <- beta.multi(MM[c(16, 105),
+betamulti.42 <- beta.multi(MM[c(24, 112),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.46 <- beta.multi(MM[c(4, 109),
+betamulti.43 <- beta.multi(MM[c(16, 104),
+                              -c(1:5)], index.family="sorensen")
+
+betamulti.46 <- beta.multi(MM[c(4, 108),
                               -c(1:5)], index.family="sorensen")
 
 #UD
-betamulti.12 <- beta.multi(MM[c(1,105),
+betamulti.12 <- beta.multi(UD[c(1,105),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.14 <- beta.multi(MM[c(5, 93),
+betamulti.14 <- beta.multi(UD[c(5, 93),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.15 <- beta.multi(MM[c(21, 109),
+betamulti.15 <- beta.multi(UD[c(21, 109),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.20 <- beta.multi(MM[c(22, 110),
+betamulti.20 <- beta.multi(UD[c(22, 110),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.21 <- beta.multi(MM[c(6, 94),
+betamulti.21 <- beta.multi(UD[c(6, 94),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.23 <- beta.multi(MM[c(7,95),
+betamulti.23 <- beta.multi(UD[c(7,95),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.24 <- beta.multi(MM[c(2, 106),
+betamulti.24 <- beta.multi(UD[c(2, 106),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.25 <- beta.multi(MM[c(13, 101),
+betamulti.25 <- beta.multi(UD[c(13, 101),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.26 <- beta.multi(MM[c(3, 107),
+betamulti.26 <- beta.multi(UD[c(3, 107),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.27 <- beta.multi(MM[c(23, 111),
+betamulti.27 <- beta.multi(UD[c(23, 111),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.33 <- beta.multi(MM[c(14, 102),
-                              -c(1:5)], index.family="sorensen") ##conferir essa aqui
+betamulti.33 <- beta.multi(UD[c(14, 102),
+                              -c(1:5)], index.family="sorensen") 
 
-betamulti.36 <- beta.multi(MM[c(8, 96),
+betamulti.36 <- beta.multi(UD[c(8, 96),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.37 <- beta.multi(MM[c(15, 103),
+betamulti.37 <- beta.multi(UD[c(15, 103),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.38 <- beta.multi(MM[c(24, 112),
+betamulti.38 <- beta.multi(UD[c(24, 112),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.39 <- beta.multi(MM[c(4, 108),
+betamulti.39 <- beta.multi(UD[c(4, 108),
                               -c(1:5)], index.family="sorensen")
 
-betamulti.41 <- beta.multi(MM[c(16, 104),
+betamulti.41 <- beta.multi(UD[c(16, 104),
                               -c(1:5)], index.family="sorensen")
 
 resultado.betatemporal   <- rbind(unlist(betamulti.12),
@@ -171,6 +175,9 @@ beta_temporal$tratamento <- as.factor(beta_temporal$tratamento)
 beta_temporal$invasora <- as.factor(beta_temporal$invasora)
 str(beta_temporal)
 
+##A parcela 30 retornou valores não numéricos, vou retirá-la das
+##análises que serão realizadas;
+beta_temporal <- beta_temporal[-18,]
 
-write.csv2(beta.modal, file = "26042021_betasubplot_modal_IF.csv", 
+write.csv2(beta.modal, file = "betatemporal_seminvasora.csv", 
            sep = "\t", row.names = F)
