@@ -6,13 +6,13 @@ library(ggpubr)
 library(cowplot)
 
 setwd("C:/R/fapesp_gdo")
-beta_controle <- read.table("22042021_subplot_controle_IF.txt", h = T,
+beta_controle <- read.table("betasubplot_controle_seminvasora.txt", h = T,
                             stringsAsFactors = T, sep="\t")
-beta_modal <- read.table("26042021_betasubplot_modal_IF.txt", h = T,
+beta_modal <- read.table("betasubplot_modal_seminvasora.txt", h = T,
                          stringsAsFactors = T, sep="\t")
-beta_precoce <- read.table("22042021_betasubplot_precoce_IF.txt", h = T,
+beta_precoce <- read.table("betasubplot_precoce_seminvasora.txt", h = T,
                            stringsAsFactors = T, sep="\t")
-beta_tardia <- read.table("26042021_betasubplot_tardia_IF.txt", h = T,
+beta_tardia <- read.table("betasubplot_tardia_seminvasora.txt", h = T,
                           stringsAsFactors = T, sep="\t")
 
 beta_espacotemp <- rbind(beta_controle, beta_modal, beta_precoce, beta_tardia)
