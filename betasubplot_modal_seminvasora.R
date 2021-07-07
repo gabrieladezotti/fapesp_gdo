@@ -148,6 +148,8 @@ beta.modal$tempo <- as.factor(beta.modal$tempo)
 beta.modal$parcela <- as.factor(beta.modal$parcela)
 str(beta.modal)
 
+beta.modal <- beta.modal[c(-3, -4),]
+
 
 write.csv2(beta.modal, file = "betasubplot_modal_seminvasora.csv", 
            sep = "\t", row.names = F)

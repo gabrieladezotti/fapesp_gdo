@@ -153,6 +153,8 @@ beta.tardia$tempo <- as.factor(beta.tardia$tempo)
 beta.tardia$parcela <- as.factor(beta.tardia$parcela)
 str(beta.tardia)
 
-
+##duas parcelas retornaram NaN, retirei;
+beta.tardia <- beta.tardia[c(-1:-4),]
+ 
 write.csv2(beta.tardia, file = "betasubplot_tardia_seminvasora.csv", 
            sep = "\t", row.names = F)

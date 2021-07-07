@@ -179,5 +179,5 @@ str(beta_temporal)
 ##análises que serão realizadas;
 beta_temporal <- beta_temporal[-18,]
 
-write.csv2(beta.modal, file = "betatemporal_seminvasora.csv", 
+write.csv2(beta_temporal, file = "betatemporal_seminvasora.csv", 
            sep = "\t", row.names = F)
