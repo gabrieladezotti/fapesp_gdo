@@ -14,10 +14,10 @@ beta_multi <- read.table("21042021_betamulti_parcelas.txt", h = T,
 str(beta_multi)
 beta_multi$parcela <- as.factor(beta_multi$parcela)
 
-#############Gr·fico: 
+#############Gr?fico: 
 
 ##BETA-SOR
-#sÛ boxplot
+#s? boxplot
 beta_multi  %>%
   mutate(tratamento = fct_relevel(tratamento,
                                   "FE", "EAR", "MOD", "LATE")) %>%
@@ -26,7 +26,7 @@ beta_multi  %>%
   geom_boxplot(width = 0.4, outlier.shape = NA, alpha = 0.6) +
   labs(y = "Diversidade Beta Total\n", x = "\nTratamento") +
   scale_y_continuous(limits = c(0, 1)) +
-  scale_x_discrete(labels = c("Exclus„o", "Precoce", "Modal", "Tardia")) +
+  scale_x_discrete(labels = c("Exclus√£o", "Precoce", "Modal", "Tardia")) +
   scale_fill_manual(values = c("#34cf48", "#cf6d34"),
                     labels = c("M. minutiflora", "U. decumbens")) +
   scale_colour_manual(values = c("#34cf48", "#cf6d34"),
@@ -52,7 +52,7 @@ teste <- beta_mean %>%
   mutate(tratamento = fct_relevel(tratamento,
   "FE", "EAR", "MOD", "LATE")) %>%
   mutate(tratamento = fct_recode(tratamento,
-  Exclus„o = "FE", Precoce = "EAR",
+  Exclus√£o = "FE", Precoce = "EAR",
   Modal = "MOD", Tardia = "LATE")) 
 
 teste %>%

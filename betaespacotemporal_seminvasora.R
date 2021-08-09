@@ -1,4 +1,4 @@
-#FAPESP-2021 - betaespaçotemporal \\ sem invasora
+#FAPESP-2021 - betaespa?otemporal \\ sem invasora
 library(tidyverse)
 library(gridExtra)
 library(extrafont)
@@ -34,7 +34,7 @@ p1 <- beta_controle %>%
   scale_colour_manual(values = c("#34cf48", "#cf6d34"),
                       labels = c("M. minutiflora", "U. decumbens")) +
   labs(x = "", y = "Diversidade Beta Total\n", 
-       colour = "", title = "Exclusão") +
+       colour = "", title = "ExclusÃ£o") +
   theme_test() +
   theme(text = element_text(family = "Calibri", size = 14))
 
@@ -84,7 +84,7 @@ p3 <- beta_modal %>%
   theme(text = element_text(family = "Calibri", size = 14))
 
 
-##GRÁFICO CONJUNTO
+##GR?FICO CONJUNTO
 teste <- p1 +
   theme(legend.text = element_text(size = 18))
 ggarrange(teste, p2, p3, p4, ncol = 2, nrow = 2, 

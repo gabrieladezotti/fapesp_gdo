@@ -17,9 +17,10 @@ mutate(tratamento = fct_relevel(tratamento,
   ggplot(aes(x = tratamento, y = beta.SOR, fill = invasora)) +
   geom_point(aes(x = tratamento, y = beta.SOR, colour = invasora)) +
   geom_boxplot(width = 0.4, outlier.shape = NA, alpha = 0.6) +
-  labs(y = "Diversidade Beta Total\n", x = "\nTratamento") +
+  labs(y = "Diversidade Beta Total\n", x = "\nTratamento",
+       title = "Sem Invasora") +
   scale_y_continuous(limits = c(0, 1)) +
-  scale_x_discrete(labels = c("Exclus„o", "Precoce", "Modal", "Tardia")) +
+  scale_x_discrete(labels = c("Exclus√£o", "Precoce", "Modal", "Tardia")) +
   scale_fill_manual(values = c("#34cf48", "#cf6d34"),
                     labels = c("M. minutiflora", "U. decumbens")) +
   scale_colour_manual(values = c("#34cf48", "#cf6d34"),
@@ -35,13 +36,13 @@ mutate(tratamento = fct_relevel(tratamento,
 
 
 ###statistical analyses
-modelo.betatemporal <- lm(beta.SOR ~ tratamento*invasora, 
+modelo.betatemporal_seminvasora <- lm(beta.SOR ~ tratamento*invasora, 
                           data = beta_temporal)
 
-summary(modelo.betatemporal)
-anova(modelo.betatemporal)
+summary(modelo.betatemporal_seminvasora)
+anova(modelo.betatemporal_seminvasora)
 tuckey <- TukeyHSD(aov(lm(beta.SOR ~ tratamento*invasora, 
-                          data = beta_multi)))
+                          data = beta_temporal)))
 tuckey
 
 ###bar-plot percentage nestedness and turnover in treatments
@@ -54,7 +55,7 @@ beta_mean <- data.table::melt(data.frame(
   mutate(tratamento = fct_relevel(tratamento,
                                   "FE", "EARLY", "MODAL", "LATE")) %>%
   mutate(tratamento = fct_recode(tratamento,
-                                 Exclus„o = "FE", Precoce = "EARLY",
+                                 Exclus√£o = "FE", Precoce = "EARLY",
                                  Modal = "MODAL", Tardia = "LATE")) 
 
 beta_mean %>%
@@ -64,7 +65,7 @@ beta_mean %>%
   scale_y_continuous(labels = scales::percent) +
   scale_fill_manual(values = c("#87CEFA", "#FA8072"), 
                     labels = c("Turnover", "Aninhamento")) +
-  labs(y = "", x = "", fill = "") +
+  labs(y = "", x = "", fill = "", title = "Sem Invasora") +
   theme_bw() +
   theme(legend.position="bottom", 
         text = element_text(family = "Calibri", size = 15),
