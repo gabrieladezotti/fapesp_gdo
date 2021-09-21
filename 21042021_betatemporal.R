@@ -22,22 +22,22 @@ beta_multi  %>%
   mutate(tratamento = fct_relevel(tratamento,
                                   "FE", "EAR", "MOD", "LATE")) %>%
   ggplot(aes(x = tratamento, y = beta.SOR, fill = invasora)) +
-  geom_point(aes(x = tratamento, y = beta.SOR, colour = invasora)) +
-  geom_boxplot(width = 0.4, outlier.shape = NA, alpha = 0.6) +
-  labs(y = "Diversidade Beta Total\n", x = "\nTratamento") +
+  geom_point(aes(x = tratamento, y = beta.SOR, colour = invasora), size = 3) +
+  geom_boxplot(width = 0.4, outlier.shape = NA, alpha = 0.8) +
+  labs(y = "Total Beta-diversity\n", x = "\nTreatment") +
   scale_y_continuous(limits = c(0, 1)) +
-  scale_x_discrete(labels = c("Exclusão", "Precoce", "Modal", "Tardia")) +
+  scale_x_discrete(labels = c("Fire Exclusion", "Early-Dry", "Mid-Dry", "Late-Dry")) +
   scale_fill_manual(values = c("#34cf48", "#cf6d34"),
-                    labels = c("M. minutiflora", "U. decumbens")) +
+                    labels = c("M. minutiflora", "U. brizantha")) +
   scale_colour_manual(values = c("#34cf48", "#cf6d34"),
                       guide = F) +
   theme_niwot() +
   theme(legend.position="top", 
         text = element_text(family = "Calibri", size = 25),
-        axis.text.x = element_text(size = 22),
-        axis.text.y = element_text(size = 22),
-        axis.title.y = element_text(size = 24),
-        axis.title.x = element_text(size = 24),
+        axis.text.x = element_text(size = 24),
+        axis.text.y = element_text(size = 24),
+        axis.title.y = element_text(size = 28),
+        axis.title.x = element_text(size = 28),
         legend.text = element_text(size= 22))
 
 ###bar_plot
